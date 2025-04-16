@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Consecutive Numbers</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let num of consecutiveNumbers">{{ num }}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="stopConsecutive()">Stop Consecutive</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Random Numbers</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let rand of randomNumbers">{{ rand }}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="stopRandom()">Stop Random</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
