@@ -1,0 +1,8 @@
+<button (click)="showTable()">Добавить таблицу</button>
+<button (click)="clearTable()">Очистить</button>
+
+<ng-container #container></ng-container>
+
+<ng-template #tableTemplate>
+  <app-dynamic></app-dynamic>
+</ng-template>
