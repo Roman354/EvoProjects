@@ -1,0 +1,9 @@
+<ng-container *ngIf="(data$ | async) as post">
+  <mat-card class="post-card">
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle>ID: {{ post.id }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ post.body }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/">Главная</a>
+  <a mat-button routerLink="/posts">Посты</a>
+</mat-toolbar>
+
+<div class="role-info mat-elevation-z2">
+  Ваша текущая роль: {{ role$ | async }}
+</div>
+
+<router-outlet></router-outlet>
