@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>TODO List (NGXS)</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Enter task</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="todoText"
+      (keyup.enter)="addTodo()"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addTodo()">Add</button>
+
+  <mat-list>
+    <mat-list-item *ngFor="let todo of todos$ | async">
+      {{ todo.text }}
+    </mat-list-item>
+  </mat-list>
+</div>
