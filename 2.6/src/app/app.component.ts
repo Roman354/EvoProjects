@@ -1,4 +1,5 @@
-import { Component, TemplateRef, ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
+import { DynamicComponent } from './dynamic/dynamic.component';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,18 @@ import { Component, TemplateRef, ViewChild, ViewContainerRef, ComponentRef } fro
 })
 export class AppComponent {
   @ViewChild('container', {read: ViewContainerRef}) container!: ViewContainerRef;
-
-  @ViewChild('tableTemplate') tableTemplate!: TemplateRef<any>;
+  private componentRef: ComponentRef<DynamicComponent> | null = null;
 
   showTable() {
     this.container.clear();
-    this.container.createEmbeddedView(this.tableTemplate);
+    this.componentRef = this.container.createComponent(DynamicComponent);
   }
 
   clearTable() {
+    if (this.componentRef) {
+      this.componentRef.destroy();
+      this.componentRef = null;
+    }
     this.container.clear();
   }
 }

@@ -8,7 +8,6 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   constructor(private api: ApiService) {}
-
   getPosts() {
     this.api.getPosts().subscribe(console.log);
   }
